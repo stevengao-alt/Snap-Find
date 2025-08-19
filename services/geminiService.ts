@@ -1,4 +1,3 @@
-
 import { GoogleGenAI, Type } from "@google/genai";
 import type { IdentifiedItem } from '../types';
 
@@ -79,7 +78,18 @@ export async function identifyGroceryItems(base64Image: string): Promise<Identif
     }
     
     const resultJson = JSON.parse(text);
-    return resultJson.items || [];
+    const items = resultJson.items || [];
+    
+    // Filter out items that do not have a valid boundingBox to prevent runtime errors.
+    // The API might occasionally return items without this property despite the schema.
+    return items.filter((item: any): item is IdentifiedItem => 
+      item &&
+      item.boundingBox &&
+      typeof item.boundingBox.x_min === 'number' &&
+      typeof item.boundingBox.y_min === 'number' &&
+      typeof item.boundingBox.x_max === 'number' &&
+      typeof item.boundingBox.y_max === 'number'
+    );
 
   } catch (error) {
     console.error("Error calling Gemini API:", error);
