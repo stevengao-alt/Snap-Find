@@ -1,0 +1,21 @@
+{
+  "name": "Grocery Snap & Find",
+  "short_name": "Snap&Find",
+  "description": "An intelligent web application that uses image recognition to identify grocery items. Upload a photo, and the app will tell you what the item is and check if it's available in our virtual flipchart database.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#F5F5F5",
+  "theme_color": "#4CAF50",
+  "icons": [
+    {
+      "src": "https://storage.googleapis.com/project-hosting-images/grocery-snap-and-find-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://storage.googleapis.com/project-hosting-images/grocery-snap-and-find-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

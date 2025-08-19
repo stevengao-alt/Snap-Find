@@ -1,0 +1,5 @@
+{
+  "name": "Grocery Snap & Find",
+  "description": "An intelligent web application that uses image recognition to identify grocery items. Upload a photo, and the app will tell you what the item is and check if it's available in our virtual flipchart database.",
+  "requestFramePermissions": []
+}
